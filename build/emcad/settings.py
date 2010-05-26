@@ -51,11 +51,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    
+    'django.contrib.markup',
+
     'django_extensions',
     'sorl.thumbnail',
     'south',
-    
+
     'content_blocks',
     'projects',
 )

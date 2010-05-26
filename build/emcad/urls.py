@@ -1,17 +1,53 @@
 from django.conf.urls.defaults import *
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+
+admin.autodiscover()
+
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^emcad/', include('emcad.foo.urls')),
+    # Admin
+    (r'^admin/', include(admin.site.urls)),
+    
+    # Projects
+    (r'^projects/', include('projects.urls')),
+)
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+urlpatterns += patterns('django.views.generic.simple',
+    # Home
+    url(r"^$", "direct_to_template", {
+        "template": "home.html",
+    }, name="home"),
 
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    # Why EMCAD
+    url(r"^why-emcad/$", "direct_to_template", {
+        "template": "why/emcad.html",
+    }, name="why_emcad"),
+    url(r"^why-emcad/leed/$", "direct_to_template", {
+        "template": "why/leed.html",
+    }, name="why_emcad_leed"),
+    url(r"^why-emcad/go-green/$", "direct_to_template", {
+        "template": "why/go-green.html",
+    }, name="why_emcad_green"),
+
+    # Who We Are
+    url(r"^who-we-are/$", "direct_to_template", {
+        "template": "who/dave-myles.html",
+    }, name="who_dave_myles"),
+    url(r"^who-we-are/project-team/$", "direct_to_template", {
+        "template": "who/project-team.html",
+    }, name="who_project_team"),
+    url(r"^who-we-are/giving-back/$", "direct_to_template", {
+        "template": "who/giving-back.html",
+    }, name="who_giving_back"),
+
+    # Services
+    url(r"^services/$", "direct_to_template", {
+        "template": "services.html",
+    }, name="services"),
+
+    # Contact
+    url(r"^contact/$", "direct_to_template", {
+        "template": "contact.html",
+    }, name="contact"),
 )
