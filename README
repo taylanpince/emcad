@@ -1,0 +1,43 @@
+EMCAD Web Site
+==============
+
+A simple content management system for EMCAD. All content and graphics are
+editable through the admin. There is a special app for projects.
+
+
+Installation
+------------
+
+Use pip to install your library requirements, using virtualenv is recommended,
+but not necessary:
+
+	pip install -r conf/requirements.pip
+
+Create your database and user. Settings file is setup for PostgreSQL, but can
+easily be changed to use MySQL. Create a symlink to the settings file:
+
+	cd build/emcad
+	ln -s ../../conf/settings.py settings_local.py
+
+Update the conf/settings.py file with the database name and credentials if you
+used something other than what's already in there.
+
+Create a symlink for admin media files:
+
+	cd build/emcad/media
+	ln -s /path/to/django/contrib/admin/media admin
+
+Create a files folder and make sure the server can write to it:
+
+	cd build/emcad/media
+	mkdir files
+	chown -R www-data:www-data files
+
+Finally, synchronize your database:
+
+	cd build/emcad
+	./manage.py syncdb
+	./manage.py migrate
+
+It will ask you to create an admin account on first run. Don't forget to pass
+those credentials back to everyone involved.

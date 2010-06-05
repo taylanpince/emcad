@@ -67,15 +67,3 @@ except:
     pass
 
 ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
-
-
-# Django settings for emcad project.
-
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
-MANAGERS = ADMINS
