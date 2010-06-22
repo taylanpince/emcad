@@ -2,6 +2,7 @@
 
 {% load content_blocks_tags %}
 
+{% block class %}home{% endblock %}
 {% block subnav_home %}active{% endblock %}
 
 
@@ -9,6 +10,8 @@
 
 <img src="{{ MEDIA_URL }}images/img-home.jpg" alt="We bring buildings to life" />
 
-{% content_block "home" %}
+<div class="inset">
+	{% content_block "home" %}
+</div>
 
 {% endblock %}

@@ -13,6 +13,9 @@
 		@import "{{ MEDIA_URL }}css/screen.css";
 	</style>
 	
+	<script src="{{ MEDIA_URL }}js/cufon.js" type="text/javascript"></script>
+	<script src="{{ MEDIA_URL }}js/officina_sans_bold.js" type="text/javascript"></script>
+	
 </head>
 
 <body class="{% block class %}{% endblock %}">
@@ -23,7 +26,7 @@
 			
 			<ul>
 				<li>
-					<ul>
+					<ul id="MainMenu">
 						<li><a href="{% url home %}" class="{% block subnav_home %}{% endblock %}">HOME</a></li>
 						<li><a href="{% url why_emcad %}" class="{% block subnav_why %}{% endblock %}">WHY EMCAD</a></li>
 						<li><a href="{% url projects_categories %}" class="{% block subnav_projects %}{% endblock %}">PROJECTS IN YOUR COMMUNITY</a></li>
@@ -47,7 +50,7 @@
 				<strong>Phone:</strong> (519) 641-3040 | 
 				<strong>Email:</strong> <a href="mailto:general@emcad.ca">general@emcad.ca</a>
 			</p>
-			<p>
+			<p id="FooterMenu">
 				<a href="{% url home %}">Home</a> | 
 				<a href="{% url why_emcad %}">Why EMCAD</a> | 
 				<a href="{% url who_dave_myles %}">Who We Are</a> | 
@@ -60,6 +63,16 @@
 			</p>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+	//<![CDATA[
+		Cufon.replace("#Header a", {
+			"hover": true,
+			"fontSize": "12px",
+			"letterSpacing": "-0.5px"
+		});
+	//]]>
+	</script>
 
 </body>
 </html>
