@@ -24,12 +24,12 @@
 			<ul>
 				<li>
 					<ul>
-						<li><a href="{% url home %}">HOME</a></li>
-						<li><a href="{% url why_emcad %}">WHY EMCAD</a></li>
-						<li><a href="{% url projects_categories %}">PROJECTS IN YOUR COMMUNITY</a></li>
-						<li><a href="{% url who_dave_myles %}">WHO WE ARE</a></li>
-						<li><a href="{% url services %}">SERVICES</a></li>
-						<li><a href="{% url contact %}">CONTACT US</a></li>
+						<li><a href="{% url home %}" class="{% block subnav_home %}{% endblock %}">HOME</a></li>
+						<li><a href="{% url why_emcad %}" class="{% block subnav_why %}{% endblock %}">WHY EMCAD</a></li>
+						<li><a href="{% url projects_categories %}" class="{% block subnav_projects %}{% endblock %}">PROJECTS IN YOUR COMMUNITY</a></li>
+						<li><a href="{% url who_dave_myles %}" class="{% block subnav_who %}{% endblock %}">WHO WE ARE</a></li>
+						<li><a href="{% url services %}" class="{% block subnav_services %}{% endblock %}">SERVICES</a></li>
+						<li><a href="{% url contact %}" class="{% block subnav_contact %}{% endblock %}">CONTACT US</a></li>
 					</ul>
 				</li>
 				{% block subnav %}{% endblock %}

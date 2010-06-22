@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Why EMCAD?{% endblock %}
+{% block title %}Who We Are{% endblock %}
+{% block subnav_who %}active{% endblock %}
 
 {% block subnav %}
-	<li>
-		
-	</li>
-{% endblock %}
-
-{% block content %}
-	
+<li>
+	<ul>
+		<li><a href="{% url who_dave_myles %}" class="{% block subnav_who_dave %}{% endblock %}">DAVID MYLES</a></li>
+		<li><a href="{% url who_project_team %}" class="{% block subnav_who_team %}{% endblock %}">OUR PROJECT TEAM</a></li>
+		<li><a href="{% url who_giving_back %}" class="{% block subnav_who_giving %}{% endblock %}">GIVING BACK</a></li>
+	</ul>
+</li>
 {% endblock %}

@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 
+{% load content_blocks_tags %}
+
+{% block title %}Contact Us{% endblock %}
+{% block subnav_contact %}active{% endblock %}
+{% block class %}two-column{% endblock %}
+
 
 {% block content %}
 
+<div id="LeftColumn">
+	{% content_block "contact" %}
+</div>
 
+<div id="RightColumn">
+	MAP AND PHOTO GOES HERE
+</div>
 
 {% endblock %}

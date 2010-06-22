@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+{% block subnav_projects %}active{% endblock %}
+
+{% block subnav %}
+{% if category %}
+<li>
+	<ul>
+		{% for cat in categories %}
+		<li><a href="{{ cat.get_absolute_url }}" class="{% ifequal category cat %}active{% endifequal %}">{{ cat.title }}</a></li>
+		{% endblock %}
+	</ul>
+</li>
+{% endif %}
+{% endblock %}

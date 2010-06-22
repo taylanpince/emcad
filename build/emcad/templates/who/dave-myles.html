@@ -1,8 +1,13 @@
 {% extends "who/base.html" %}
 
+{% load content_blocks_tags %}
+
+{% block title %}{{ block.super }} | David Myles{% endblock %}
+{% block subnav_who_dave %}active{% endblock %}
+
 
 {% block content %}
 
-
+{% content_block "who_dave" %}
 
 {% endblock %}

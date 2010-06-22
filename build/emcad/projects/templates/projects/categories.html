@@ -1,8 +1,24 @@
 {% extends "projects/base.html" %}
 
+{% load thumbnail %}
+{% load content_blocks_tags %}
+
 
 {% block content %}
 
+{% content_block "projects" %}
 
+<ul>
+	{% for cat in categories %}
+	<li>
+		{% if cat.image %}
+		<a href="{{ cat.get_absolute_url }}">
+			<img src="{% thumbnail cat.image 210x232 crop upscale %}" alt="{{ cat.title }}" />
+		</a>
+		{% endif %}
+		<a href="{{ cat.get_absolute_url }}" class="block">{{ cat.title }}</a>
+	</li>
+	{% endfor %}
+</ul>
 
 {% endblock %}
