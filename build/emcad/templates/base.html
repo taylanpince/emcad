@@ -18,8 +18,47 @@
 <body class="{% block class %}{% endblock %}">
 
 	<div id="Container">
-		{% block header %}{% endblock %}
-		{% block content %}{% endblock %}
+		<div id="Header">
+			<a href="{% url home %}" id="Logo"><img src="{{ MEDIA_URL }}images/logo-emcad.png" alt="EMCAD MEP Consulting Engineers" /></a>
+			
+			<ul>
+				<li>
+					<ul>
+						<li><a href="{% url home %}">HOME</a></li>
+						<li><a href="{% url why_emcad %}">WHY EMCAD</a></li>
+						<li><a href="{% url projects_categories %}">PROJECTS IN YOUR COMMUNITY</a></li>
+						<li><a href="{% url who_dave_myles %}">WHO WE ARE</a></li>
+						<li><a href="{% url services %}">SERVICES</a></li>
+						<li><a href="{% url contact %}">CONTACT US</a></li>
+					</ul>
+				</li>
+				{% block subnav %}{% endblock %}
+			</ul>
+
+			<div id="Content">
+				{% block content %}{% endblock %}
+			</div>
+			
+			<div id="Footer">
+				<p>
+					<span class="orange"><strong>EMCAD:</strong></span> 
+					<strong>Address:</strong> 150-759 Hyde Park Rd  London, ON N6H 3S2 | 
+					<strong>Phone:</strong> (519) 641-3040 | 
+					<strong>Email:</strong> <a href="mailto:general@emcad.ca">general@emcad.ca</a>
+				</p>
+				<p>
+					<a href="{% url home %}">Home</a> | 
+					<a href="{% url why_emcad %}">Why EMCAD</a> | 
+					<a href="{% url who_dave_myles %}">Who We Are</a> | 
+					<a href="{% url services %}">Services</a> | 
+					<a href="{% url projects_categories %}">Projects in Your Community</a> | 
+					<a href="{% url contact %}">Contact Us</a>
+				</p>
+				<p class="small">
+					All Content Copyright EMCAD 2010
+				</p>
+			</div>
+		</div>
 	</div>
 
 </body>

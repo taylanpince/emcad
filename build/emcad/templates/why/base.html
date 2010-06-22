@@ -1,1 +1,13 @@
 {% extends "base.html" %}
+
+{% block title %}Why EMCAD{% endblock %}
+
+{% block subnav %}
+<li>
+	<ul>
+		<li><a href="{% url why_emcad %}" class="{% block subnav_why_emcad %}{% endblock %}">WHY EMCAD</a></li>
+		<li><a href="{% url why_emcad_green %}" class="{% block subnav_why_green %}{% endblock %}">GO GREEN</a></li>
+		<li><a href="{% url why_emcad_leed %}" class="{% block subnav_why_leed %}{% endblock %}">LEED</a></li>
+	</ul>
+</li>
+{% endblock %}
