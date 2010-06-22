@@ -1,2 +1,4 @@
 build/emcad/settings_local.py
+build/emcad/media/admin
+build/emcad/media/files
 *.pyc
