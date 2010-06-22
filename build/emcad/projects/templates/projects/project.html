@@ -1,8 +1,40 @@
 {% extends "projects/base.html" %}
 
+{% load markup %}
+{% load thumbnail %}
+
+{% block title %}{{ block.super }} | {{ project.category.title }} | {{ project.title }}{% endblock %}
+
+{% block subnav %}
+{{ block.super }}
+<li>
+	<ul>
+		{% for proj in category.projects.all %}
+		<li><a href="{{ proj.get_absolute_url }}" class="{% ifequal project proj %}active{% endifequal %}">{{ proj.title|upper }}</a></li>
+		{% endfor %}
+	</ul>
+</li>
+{% endblock %}
+
 
 {% block content %}
 
+<h2>{{ project.title }}</h2>
+{% if project.subtitle %}<h3>{{ project.subtitle }}</h3>{% endif %}
 
+{{ project.blurb|markdown }}
+
+{% if project.photos.count %}
+<ul>
+	{% for photo in project.photos.all %}
+	<li>
+		<img src="{% thumbnail photo.image 680x388 crop upscale %}" alt="{{ photo.caption }}" />
+		{% if photo.caption %}<p>{{ photo.caption }}</p>{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+{{ project.content|markdown }}
 
 {% endblock %}
