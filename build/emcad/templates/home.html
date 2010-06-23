@@ -4,6 +4,9 @@
 
 {% block class %}home{% endblock %}
 {% block subnav_home %}active{% endblock %}
+{% block javascript_include %}
+<script src="{{ MEDIA_URL }}js/officina_sans_book_italic.js" type="text/javascript"></script>
+{% endblock %}
 
 
 {% block content %}
@@ -14,4 +17,16 @@
 	{% content_block "home" %}
 </div>
 
+{% endblock %}
+
+
+{% block javascript_execute %}
+<script type="text/javascript">
+//<![CDATA[
+	Cufon.replace("h2", {
+		"fontSize": "20px",
+		"fontFamily": "Officina Book Italic"
+	});
+//]]>
+</script>
 {% endblock %}
