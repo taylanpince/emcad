@@ -4,13 +4,11 @@
 {% block subnav_projects %}active{% endblock %}
 
 {% block subnav %}
-{% if category %}
 <li>
 	<ul>
 		{% for cat in categories %}
-		<li><a href="{{ cat.get_absolute_url }}" class="{% ifequal category cat %}active{% endifequal %}">{{ cat.title|upper }}</a></li>
+		<li><a href="{{ cat.get_absolute_url }}" class="{% if category %}{% ifequal category cat %}active{% endifequal %}{% endif %}">{{ cat.title|upper }}</a></li>
 		{% endfor %}
 	</ul>
 </li>
-{% endif %}
 {% endblock %}

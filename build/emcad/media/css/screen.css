@@ -25,10 +25,49 @@ body {
 
 #Content {
     margin: 0px 0px 40px 0px;
+    padding: 30px 0px 0px 0px;
+    background: transparent url("../images/bg-separator.png") top left no-repeat;
+}
+
+body.home #Content {
+    background: none;
+    padding: 0px;
 }
 
 #Content div.inset {
     padding: 25px 40px 0px 40px;
+}
+
+#Content div.right-block {
+    float: right;
+    display: inline;
+    width: 222px;
+    margin: 0px 0px 0px 20px;
+}
+
+body.two-column #Content {
+    width: 850px;
+    overflow: hidden;
+    position: static;
+}
+
+#LeftColumn {
+    float: left;
+    display: inline;
+    width: 190px;
+}
+
+#RightColumn {
+    float: left;
+    display: inline;
+    width: 640px;
+    height: 300px;
+    margin: 0px 0px 0px 20px;
+}
+
+#GoogleMap {
+    width: 100%;
+    height: 100%;
 }
 
 /* @end */
@@ -39,6 +78,11 @@ body {
 p {
     line-height: 20px;
     margin: 0px 0px 20px 0px;
+}
+
+p.caption {
+    font-size: 12px;
+    font-style: italic;
 }
 
 span.orange {
@@ -61,7 +105,9 @@ h2 {
 }
 
 h3 {
-    
+    font: 16px Helvetica, Arial, sans-serif;
+    color: #f26522;
+    margin: 0px 0px 15px 0px;
 }
 
 h4 {
@@ -70,6 +116,7 @@ h4 {
     margin: 0px 0px 2px 0px;
 }
 
+blockquote,
 body.home h2 {
     font: 16px Georgia, Times, serif;
     font-style: italic;
@@ -82,6 +129,10 @@ body.home #Content p {
 
 img {
     border: none;
+}
+
+img.framed {
+    border: 5px solid #f4f4f4;
 }
 
 a,
@@ -106,6 +157,51 @@ a:hover {
     background: transparent url("../images/icon-dot.png") 0px 5px no-repeat;
 }
 
+#Content ul.block-list {
+    overflow: hidden;
+    position: static;
+    width: 850px;
+    margin: 0px;
+}
+
+#Content ul.block-list li {
+    float: left;
+    display: inline;
+    position: relative;
+    background: none;
+    margin: 0px 5px 5px 0px;
+    padding: 0px;
+}
+
+#Content ul.block-list li.last {
+    margin-right: 0px;
+}
+
+#Content ul.block-list li a.block {
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    bottom: 16px;
+    left: 10px;
+    width: 80%;
+    background: #fff url("../images/btn-view.png") 90% 48% no-repeat;
+    padding: 10px;
+}
+
+#Content ul.block-list li a.block-small {
+    width: 50%;
+}
+
+#Content ul.image-viewer {
+    margin: 0px;
+}
+
+#Content ul.image-viewer li {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+}
+
 /* @end */
 
 
@@ -115,7 +211,7 @@ a:hover {
     width: 850px;
     overflow: hidden;
     position: static;
-    margin: 26px 0px 40px 0px;
+    margin: 26px 0px 36px 0px;
 }
 
 #Logo {

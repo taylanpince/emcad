@@ -8,12 +8,12 @@
 
 {% content_block "projects" %}
 
-<ul>
+<ul class="block-list">
 	{% for cat in categories %}
-	<li>
+	<li class="{% if forloop.last %}last{% endif %}">
 		{% if cat.image %}
 		<a href="{{ cat.get_absolute_url }}">
-			<img src="{% thumbnail cat.image 210x232 crop upscale %}" alt="{{ cat.title }}" />
+			<img src="{% thumbnail cat.image 208x232 crop upscale %}" alt="{{ cat.title }}" />
 		</a>
 		{% endif %}
 		<a href="{{ cat.get_absolute_url }}" class="block">{{ cat.title }}</a>

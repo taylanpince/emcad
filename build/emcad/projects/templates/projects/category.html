@@ -5,21 +5,33 @@
 
 {% block title %}{{ block.super }} | {{ category.title }}{% endblock %}
 
+{% block subnav %}
+{{ block.super }}
+<li>
+	<ul>
+		{% for project in category.projects.all %}
+		<li><a href="{{ project.get_absolute_url }}">{{ project.title|upper }}</a></li>
+		{% endfor %}
+	</ul>
+</li>
+{% endblock %}
+
+
 {% block content %}
 
 <h2>{{ category.title }}</h2>
 
 {{ category.blurb|markdown }}
 
-<ul>
+<ul class="block-list">
 	{% for project in category.projects.all %}
-	<li>
+	<li class="{% cycle "" "last" %}">
 		{% if project.image %}
 		<a href="{{ project.get_absolute_url }}">
-			<img src="{% thumbnail project.image 423x269 crop upscale %}" alt="{{ project.title }}" />
+			<img src="{% thumbnail project.image 422x269 crop upscale %}" alt="{{ project.title }}" />
 		</a>
 		{% endif %}
-		<a href="{{ project.get_absolute_url }}" class="block">{{ project.title }}</a>
+		<a href="{{ project.get_absolute_url }}" class="block block-small">{{ project.title }}</a>
 	</li>
 	{% endfor %}
 </ul>

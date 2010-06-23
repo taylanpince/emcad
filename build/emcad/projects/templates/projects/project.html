@@ -25,11 +25,11 @@
 {{ project.blurb|markdown }}
 
 {% if project.photos.count %}
-<ul>
+<ul class="image-viewer">
 	{% for photo in project.photos.all %}
 	<li>
-		<img src="{% thumbnail photo.image 680x388 crop upscale %}" alt="{{ photo.caption }}" />
-		{% if photo.caption %}<p>{{ photo.caption }}</p>{% endif %}
+		<img src="{% thumbnail photo.image 680x388 %}" alt="{{ photo.caption }}" />
+		{% if photo.caption %}<p class="caption">{{ photo.caption }}</p>{% endif %}
 	</li>
 	{% endfor %}
 </ul>
