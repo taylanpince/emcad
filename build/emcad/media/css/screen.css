@@ -38,11 +38,23 @@ body.home #Content {
     padding: 25px 40px 0px 40px;
 }
 
+#Content div.left-block {
+    float: left;
+    display: inline;
+    width: 180px;
+    margin: 0px 20px 20px 0px;
+}
+
 #Content div.right-block {
     float: right;
     display: inline;
     width: 222px;
     margin: 0px 0px 0px 20px;
+}
+
+#Content div.right-block blockquote p {
+    font-size: 22px;
+    line-height: 28px;
 }
 
 body.two-column #Content {
@@ -152,9 +164,9 @@ a:hover {
 }
 
 #Content ul li {
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 14px 0px;
     padding: 0px 0px 0px 14px;
-    background: transparent url("../images/icon-dot.png") 0px 5px no-repeat;
+    background: transparent url("../images/icon-dot.png") 0% 50% no-repeat;
 }
 
 #Content ul.block-list {
