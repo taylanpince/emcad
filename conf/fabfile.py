@@ -4,6 +4,7 @@ from fabric.contrib.console import confirm
 
 env.root_dir = "/home/emcadteam/sites/emcad"
 env.project_dir = "%s/src/emcad" % env.root_dir
+env.user = "emcadteam"
 env.hosts = [
     "173.203.51.168",
 ]
