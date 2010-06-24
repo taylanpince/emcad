@@ -52,7 +52,16 @@ body.home #Content {
     margin: 0px 0px 0px 20px;
 }
 
-#Content div.right-block blockquote p {
+#Content div.quote-block {
+    float: right;
+    display: inline;
+    width: 279px;
+    margin: 260px 0px 0px 20px;
+    padding: 20px 0px 0px 0px;
+    border-top: 1px solid #fcd8c8;
+}
+
+#Content div.quote-block blockquote p {
     font-size: 22px;
     line-height: 28px;
 }
@@ -69,6 +78,10 @@ body.two-column #Content {
     width: 190px;
 }
 
+body.home #LeftColumn {
+    width: 469px;
+}
+
 #RightColumn {
     float: left;
     display: inline;
@@ -77,8 +90,14 @@ body.two-column #Content {
     margin: 0px 0px 0px 20px;
 }
 
+body.home #RightColumn {
+    width: 356px;
+    margin-left: 25px;
+    padding-top: 46px;
+}
+
 #GoogleMap {
-    width: 100%;
+    width: 447px;
     height: 100%;
 }
 
@@ -147,6 +166,16 @@ img.framed {
     border: 5px solid #f4f4f4;
 }
 
+img.margin-bottom {
+    margin-bottom: 10px;
+}
+
+img.left {
+    float: left;
+    display: inline;
+    margin-right: 14px;
+}
+
 a,
 a:link,
 a:active,
@@ -176,6 +205,11 @@ a:hover {
     margin: 0px;
 }
 
+div.image-block {
+    position: relative;
+    margin-bottom: 3px;
+}
+
 #Content ul.block-list li {
     float: left;
     display: inline;
@@ -189,15 +223,22 @@ a:hover {
     margin-right: 0px;
 }
 
+div.image-block a.block,
+div.image-block a.block-small,
+#Content ul.block-list li a.block-small,
 #Content ul.block-list li a.block {
     text-decoration: none;
     display: block;
     position: absolute;
     bottom: 16px;
     left: 10px;
-    width: 80%;
+    width: 75%;
     background: #fff url("../images/btn-view.png") 90% 48% no-repeat;
     padding: 10px;
+}
+
+div.image-block a.block-small {
+    width: 25%;
 }
 
 #Content ul.block-list li a.block-small {

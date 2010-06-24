@@ -8,12 +8,19 @@
 
 {% content_block "projects" %}
 
+<div class="image-block">
+	<a href="{% url projects_project "commercial" "office-towers" %}">
+		<img src="{{ MEDIA_URL }}images/img-barrel-yards.jpg" alt="Barrel Yards, Waterloo" />
+	</a>
+	<a href="{% url projects_project "commercial" "office-towers" %}" class="block-small">Barrel Yards, Waterloo</a>
+</div>
+
 <ul class="block-list">
 	{% for cat in categories %}
 	<li class="{% if forloop.last %}last{% endif %}">
 		{% if cat.image %}
 		<a href="{{ cat.get_absolute_url }}">
-			<img src="{% thumbnail cat.image 208x232 crop upscale %}" alt="{{ cat.title }}" />
+			<img src="{% thumbnail cat.image 280x232 crop upscale %}" alt="{{ cat.title }}" />
 		</a>
 		{% endif %}
 		<a href="{{ cat.get_absolute_url }}" class="block">{{ cat.title }}</a>
