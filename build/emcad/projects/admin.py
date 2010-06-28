@@ -4,7 +4,7 @@ from projects.models import Category, Project, Photo
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug")
+    list_display = ("title", "slug", "order")
     search_fields = ("title", "slug", "blurb")
     save_on_top = True
     prepopulated_fields = {
@@ -23,7 +23,7 @@ class PhotoAdmin(admin.StackedInline):
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title", "subtitle", "category")
+    list_display = ("title", "subtitle", "category", "order")
     list_filter = ("category", )
     search_fields = ("title", "subtitle", "blurb", "content")
     save_on_top = True
