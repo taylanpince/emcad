@@ -10,6 +10,7 @@ class Category(models.Model):
     slug = models.SlugField(_("Slug"), max_length=255, unique=True)
     blurb = models.TextField(_("Blurb"), blank=True)
     image = models.ImageField(_("Image"), upload_to="files/projects/categories", blank=True, null=True)
+    order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     @models.permalink
     def get_absolute_url(self):
@@ -20,6 +21,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
+        ordering = ["order"]
 
     def __unicode__(self):
         return self.title
@@ -36,6 +38,7 @@ class Project(models.Model):
     content = models.TextField(_("Content"), blank=True)
     image = models.ImageField(_("Image"), upload_to="files/projects/thumbs", blank=True, null=True)
     category = models.ForeignKey(Category, verbose_name=_("Category"), related_name="projects")
+    order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     @models.permalink
     def get_absolute_url(self):
@@ -47,6 +50,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = _("Project")
         verbose_name_plural = _("Projects")
+        ordering = ["order"]
 
     def __unicode__(self):
         return self.title
@@ -59,10 +63,12 @@ class Photo(models.Model):
     caption = models.CharField(_("Caption"), blank=True, max_length=255)
     image = models.ImageField(_("Image"), upload_to="files/projects/photos")
     project = models.ForeignKey(Project, verbose_name=_("Project"), related_name="photos")
+    order = models.PositiveSmallIntegerField(_("Order"), default=0)
 
     class Meta:
         verbose_name = _("Photo")
         verbose_name_plural = _("Photos")
+        ordering = ["order"]
 
     def __unicode__(self):
         return u"Photo for %(project)s (%(name)s)" % {

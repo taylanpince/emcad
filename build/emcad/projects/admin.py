@@ -13,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            "fields": (("title", "slug"), "blurb", "image"),
+            "fields": (("title", "slug", "order"), "blurb", "image"),
         }),
     )
 
@@ -36,7 +36,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            "fields": (("title", "slug"), "subtitle", "category", "blurb", "image", "content"),
+            "fields": (("title", "slug", "order"), "subtitle", "category", "blurb", "image", "content"),
         }),
     )
 
