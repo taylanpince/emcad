@@ -42,10 +42,15 @@ class Project(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ("projects_project", (), {
-            "category_slug": self.category.slug,
-            "project_slug": self.slug,
-        })
+        if self.blurb or self.content:
+            return ("projects_project", (), {
+                "category_slug": self.category.slug,
+                "project_slug": self.slug,
+            })
+        else:
+            return ("projects_category", (), {
+                "category_slug": self.category.slug,
+            })
 
     class Meta:
         verbose_name = _("Project")
