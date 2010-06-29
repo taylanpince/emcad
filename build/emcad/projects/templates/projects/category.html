@@ -31,7 +31,7 @@
 			<img src="{% thumbnail project.image 422x269 crop upscale %}" alt="{{ project.title }}" />
 		</a>
 		{% endif %}
-		<a href="{{ project.get_absolute_url }}" class="block block-small{% if not project.subtitle %} no-link{% endif %}">{{ project.title }}</a>
+		<a href="{{ project.get_absolute_url }}" class="block block-small{% if not project.blurb %} no-link{% endif %}">{{ project.title }}</a>
 	</li>
 	{% endfor %}
 </ul>
