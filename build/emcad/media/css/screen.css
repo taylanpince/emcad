@@ -237,6 +237,10 @@ div.image-block a.block-small,
     padding: 10px;
 }
 
+#Content ul.block-list li a.no-link {
+    background: none !important;
+}
+
 div.image-block a.block-small {
     width: 25%;
 }
