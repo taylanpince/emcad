@@ -238,7 +238,7 @@ div.image-block a.block-small,
 }
 
 #Content ul.block-list li a.no-link {
-    background: none !important;
+    background-image: none !important;
 }
 
 div.image-block a.block-small {
