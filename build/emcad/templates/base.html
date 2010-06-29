@@ -16,6 +16,17 @@
 	<script src="{{ MEDIA_URL }}js/cufon.js" type="text/javascript"></script>
 	<script src="{{ MEDIA_URL }}js/officina_sans_bold.js" type="text/javascript"></script>
 	{% block javascript_include %}{% endblock %}
+
+	<script type="text/javascript">
+	//<![CDATA[
+		Cufon.replace("#Header a", {
+			"hover": true,
+			"fontSize": "12px",
+			"fontFamily": "Officina Bold",
+			"letterSpacing": "-0.5px"
+		});
+	//]]>
+	</script>
 	
 </head>
 
@@ -67,12 +78,6 @@
 
 	<script type="text/javascript">
 	//<![CDATA[
-		Cufon.replace("#Header a", {
-			"hover": true,
-			"fontSize": "12px",
-			"fontFamily": "Officina Bold",
-			"letterSpacing": "-0.5px"
-		});
 		Cufon.now();
 	//]]>
 	</script>
