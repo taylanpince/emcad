@@ -305,6 +305,7 @@ div.image-block a.block-small {
 #Header a {
     font: 13px Impact, Charcoal, sans-serif;
     color: #666666;
+    letter-spacing: 1px;
     text-decoration: none;
 }
 
