@@ -7,7 +7,7 @@
 <li>
 	<ul>
 		{% for cat in categories %}
-		{% if project.blurb %}<li><a href="{{ cat.get_absolute_url }}" class="{% if category %}{% ifequal category cat %}active{% endifequal %}{% endif %}">{{ cat.title|upper }}</a></li>{% endif %}
+		<li><a href="{{ cat.get_absolute_url }}" class="{% if category %}{% ifequal category cat %}active{% endifequal %}{% endif %}">{{ cat.title|upper }}</a></li>
 		{% endfor %}
 	</ul>
 </li>

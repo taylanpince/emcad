@@ -10,7 +10,7 @@
 <li>
 	<ul>
 		{% for project in category.projects.all %}
-		<li><a href="{{ project.get_absolute_url }}">{{ project.title|upper }}</a></li>
+		{% if project.blurb %}<li><a href="{{ project.get_absolute_url }}">{{ project.title|upper }}</a></li>{% endif %}
 		{% endfor %}
 	</ul>
 </li>
