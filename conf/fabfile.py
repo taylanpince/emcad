@@ -34,9 +34,7 @@ def restart():
     """
     Restart Apache process
     """
-    sudo('/etc/init.d/apache2 stop')
-    sudo('/etc/init.d/apache2 start')
-    sudo('/etc/init.d/nginx restart')
+    run('touch %s/conf/emcad.wsgi' % env.project_dir)
 
 def update_pip():
     """
