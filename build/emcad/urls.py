@@ -50,4 +50,9 @@ urlpatterns += patterns('django.views.generic.simple',
     url(r"^contact/$", "direct_to_template", {
         "template": "contact.html",
     }, name="contact"),
+
+    # Careers
+    url(r"^careers/$", "direct_to_template", {
+        "template": "careers.html",
+    }, name="careers"),
 )
