@@ -47,6 +47,7 @@
 						<li><a href="{% url services %}" class="{% block subnav_services %}{% endblock %}">SERVICES</a></li>
 						<li><a href="{% url contact %}" class="{% block subnav_contact %}{% endblock %}">CONTACT US</a></li>
 						<li><a href="{% url careers %}" class="{% block subnav_careers %}{% endblock %}">CAREERS</a></li>
+						<li><a href="{% url blog %}" class="{% block subnav_blog %}{% endblock %}">BLOG</a></li>
 					</ul>
 				</li>
 				{% block subnav %}{% endblock %}
@@ -70,6 +71,8 @@
 				<a href="{% url who_dave_myles %}">Who We Are</a> | 
 				<a href="{% url services %}">Services</a> | 
 				<a href="{% url projects_categories %}">Projects in Your Community</a> | 
+				<a href="{% url careers %}">Careers</a> | 
+				<a href="{% url blog %}">Blog</a> | 
 				<a href="{% url contact %}">Contact Us</a>
 			</p>
 			<p class="small">

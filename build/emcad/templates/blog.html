@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load content_blocks_tags %}
+
+{% block title %}Blog{% endblock %}
+{% block subnav_blog %}active{% endblock %}
+
+
+{% block content %}
+
+{% content_block "blog" %}
+
+{% endblock %}
